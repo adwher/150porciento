@@ -1,0 +1,25 @@
+import { defineConfig } from "vite"
+import { resolve } from "path"
+
+import vue from "@vitejs/plugin-vue"
+import jsx from "@vitejs/plugin-vue-jsx"
+
+export default defineConfig({
+    resolve: {
+        alias: {
+            "@components": resolve(__dirname, "./src/components")
+        }
+    },
+
+    plugins: [
+        vue({
+            template: {
+                compilerOptions: {
+                    isCustomElement: tag => tag === "feather-icon"
+                }
+            }
+        }),
+
+        jsx()
+    ],
+})

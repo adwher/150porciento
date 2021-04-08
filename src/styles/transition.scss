@@ -1,0 +1,59 @@
+.curtain-slide-enter-active,
+.curtain-slide-leave-active {
+    position: absolute;
+    animation-duration: 1s;
+    
+    &::before,
+    &::after {
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0%;
+        z-index: 5;
+        background-color: $primary;
+        transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    &::before {
+        background-color: $secondary;
+    }
+}
+
+.curtain-slide-enter-active {
+    &::before {
+        transition-delay: .2s;
+    }
+}
+
+.curtain-slide-leave-active {
+    &::after {
+        transition-delay: .2s;
+    }
+}
+
+.curtain-slide-enter-from {
+    &::before, &::after {
+        left: 0%;
+    }
+}
+
+.curtain-slide-enter-to {
+    &::before, &::after {
+        left: 100%;
+    }
+}
+
+.curtain-slide-leave-from {
+    &::before, &::after {
+        left: -100%;
+    }
+}
+
+.curtain-slide-leave-to {
+    &::before, &::after {
+        left: 0;
+    }
+}
