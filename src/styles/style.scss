@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Space+Grotesk:wght@700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300&family=Space+Grotesk:wght@700&display=swap";
 
 $primary: #02113c;
 $secondary: #00A7D4;
@@ -21,7 +21,7 @@ body {
     font-size: 11pt;
     font-family: "Inter", sans-serif;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.5;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -30,16 +30,17 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-family: "Space Grotesk", monospace;
     color: $primary;
+    line-height: 1.2;
 
     &.is-outline {
         -webkit-text-stroke-width: 1pt;
-        -webkit-text-stroke-color: $primary;
-        color: transparent;
+        -webkit-text-stroke-color: $secondary;
+        color: rgba($secondary, 10%);
     }
 }
 
 h1 {
-    font-size: clamp(2.5rem, 6vw, 5.0rem);
+    font-size: clamp(3.0rem, 6vw, 5.0rem);
 }
 
 h2 {
@@ -66,6 +67,9 @@ button {
     height: 2.6rem;
     font: inherit;
     padding: 0.3rem 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
     background-color: $secondary;
     border: none;
     color: white;
@@ -74,6 +78,24 @@ button {
     user-select: none;
 }
 
+a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 // transition
 
 @import "./transition.scss";
+
+// block
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}

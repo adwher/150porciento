@@ -1,17 +1,27 @@
 <template>
     <div class="app--layout">
         <navbar></navbar>
-        
-        <div class="app--content">
-            <router-view></router-view>
-        </div>
+
+        <router-view v-slot="{ Component, route }">
+            <transition name="curtain-slide" mode="out-in">
+                <div class="app--content" :key="route.fullPath">
+                    <component :is="Component"></component>
+                </div>
+            </transition>
+        </router-view>
     </div>
 </template>
 
 <style lang="scss">
 .app--layout {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    .app--content {
+        height: 100%;
+        flex: 1;
+    }
 }
 </style>
 
