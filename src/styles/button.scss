@@ -3,15 +3,16 @@
 button, .button {
     width: 15rem;
     height: 6rem;
-    padding: .8rem;
-    font: inherit;
-    cursor: pointer;
-    user-select: none;
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
+    padding: .8rem;
+    font: inherit;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
     border: solid 1px $primary;
     position: relative;
     box-shadow: 0 .2rem .3rem 0 rgba(black, 0.03), 0 0 .6rem 0 rgba(black, 0.08);

@@ -12,6 +12,7 @@ const routes: RouteRecordRaw[] = [
 
             {
                 path: "contact",
+                name: "contact",
                 component: () => import("./pages/contact.vue")
             },
         ]
@@ -28,6 +29,4 @@ export const router = createRouter({
     routes,
 })
 
-router.beforeResolve(() => {
-    window.scroll({ top: 0, behavior: "smooth" })
-})
+router.beforeResolve(() => window.scroll({ top: 0, behavior: "smooth" }))

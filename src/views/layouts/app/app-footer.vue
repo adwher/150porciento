@@ -6,12 +6,36 @@
         </div>
 
         <div class="footer--contact">
-            <router-link to="/contact" class="button is-primary">
+            <button class="button is-primary" @click="go">
                 <span>Ir a contacto</span>
                 <feather-icon name="arrow-up-right" size="1.2rem"></feather-icon>
-            </router-link>
+            </button>
 
             <a href="mailto:valerio@150porciento.com">valerio@150porciento.com</a>
         </div>
     </footer>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue"
+import { useRoute, useRouter } from "vue-router"
+
+export default defineComponent({
+    setup() {
+        const { name } = useRoute()
+        const { push: navigate } = useRouter()
+
+        function go() {
+            if (name === "contact") {
+                window.scroll({ top: 0, behavior: "smooth" })
+            }
+
+            else {
+                navigate("/contact")
+            }
+        }
+
+        return { go }
+    }
+})
+</script>

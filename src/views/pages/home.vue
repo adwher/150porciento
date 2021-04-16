@@ -3,7 +3,7 @@
         <div class="landing--writting">
             <h3>Diseñamos</h3>
             <p>Para un mundo cada vez más,</p>
-            <h1 class="is-outline">Innovador.</h1>
+            <h1 class="is-outline">Conectado.</h1>
         </div>
 
         <div class="landing--are">
@@ -96,7 +96,6 @@
 
 section.landing {
     height: calc(100vh - #{$navbar-height});
-    gap: 1rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -105,6 +104,12 @@ section.landing {
 
     @media (max-width: 720px) {
         height: calc(100vh - 8rem);
+    }
+
+    .landing--writting {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
     }
 
     .landing--are {
