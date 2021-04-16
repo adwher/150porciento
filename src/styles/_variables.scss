@@ -1,0 +1,9 @@
+@use "sass:color" as *;
+
+$primary: #02113c;
+$secondary: #00A7D4;
+$secondary-light: adjust($secondary, $lightness: 55%);
+
+$background-color: white;
+
+$navbar-height: 4.5rem;

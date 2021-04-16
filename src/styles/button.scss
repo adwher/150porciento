@@ -1,0 +1,65 @@
+@use "./variables" as *;
+
+button, .button {
+    width: 15rem;
+    height: 6rem;
+    padding: .8rem;
+    font: inherit;
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+    border: solid 1px $primary;
+    position: relative;
+    box-shadow: 0 .2rem .3rem 0 rgba(black, 0.03), 0 0 .6rem 0 rgba(black, 0.08);
+    color: $primary;
+    transition: all ease .2s;
+
+    feather-icon {
+        position: absolute;
+        top: .8rem;
+        right: .8rem;
+    }
+
+    &::before {
+        $border: dashed 1.5px rgba($primary, 30%);
+        $distance: -7px;
+
+        content: "";
+        display: flex;
+        position: absolute;
+        right: $distance;
+        bottom: $distance;
+        width: 100%;
+        height: 100%;
+        border-bottom: $border;
+        border-right: $border;
+        z-index: 2;
+    }
+    
+    &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+    }
+
+    &.is-secondary {
+        border-color: $secondary;
+        color: $secondary;
+
+        &:hover {
+            background-color: $secondary;
+            border-color: $secondary;
+            color: white;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}

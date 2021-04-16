@@ -11,11 +11,6 @@ const routes: RouteRecordRaw[] = [
             },
 
             {
-                path: "services",
-                component: () => import("./pages/services.vue")
-            },
-
-            {
                 path: "contact",
                 component: () => import("./pages/contact.vue")
             },
@@ -31,4 +26,8 @@ const routes: RouteRecordRaw[] = [
 export const router = createRouter({
     history: createWebHistory(),
     routes,
+})
+
+router.beforeResolve(() => {
+    window.scroll({ top: 0, behavior: "smooth" })
 })

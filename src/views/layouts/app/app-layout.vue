@@ -1,6 +1,6 @@
 <template>
-    <div class="app--layout">
-        <navbar></navbar>
+    <main class="app--layout">
+        <app-navbar></app-navbar>
 
         <router-view v-slot="{ Component, route }">
             <transition name="curtain-slide" mode="out-in">
@@ -9,7 +9,9 @@
                 </div>
             </transition>
         </router-view>
-    </div>
+
+        <app-footer></app-footer>
+    </main>
 </template>
 
 <style lang="scss">
@@ -28,11 +30,13 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 
-import Navbar from "./app-navbar.vue"
+import AppNavbar from "./app-navbar.vue"
+import AppFooter from "./app-footer.vue"
 
 export default defineComponent({
     components: {
-        Navbar,
+        AppNavbar,
+        AppFooter
     }
 })
 </script>
