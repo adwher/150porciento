@@ -22,11 +22,10 @@ import { useRoute, useRouter } from "vue-router"
 
 export default defineComponent({
     setup() {
-        const { name } = useRoute()
-        const { push: navigate } = useRouter()
+        const { push: navigate, currentRoute } = useRouter()
 
         function go() {
-            if (name === "contact") {
+            if (currentRoute.value.name === "contact") {
                 window.scroll({ top: 0, behavior: "smooth" })
             }
 
